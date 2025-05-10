@@ -1,6 +1,7 @@
 #include <ncurses.h>
 #include <stdlib.h>
 
+#include "input.h"
 #include "player.h"
 
 // Function to create a player
@@ -28,6 +29,30 @@ void update_player_coordinates(Player *player, int x, int y) {
 
   player->x = x;
   player->y = y;
+}
+
+// Function to move player
+void move_player(Player *player, InputHandling *ih) {
+
+  // player moves right
+  if (ih->key == 'd') {
+
+    update_player_coordinates(player, player->x + 1, player->y);
+  } else if (ih->key == 'a') {
+
+    // player moves left
+    update_player_coordinates(player, player->x - 1, player->y);
+  } else if (ih->key == 'w') {
+
+    // player moves up
+    update_player_coordinates(player, player->x, player->y - 1);
+  } else if (ih->key == 's') {
+
+    // player moves down
+    update_player_coordinates(player, player->x, player->y + 1);
+  }
+
+  render_player(player);
 }
 
 // Function to destroy player

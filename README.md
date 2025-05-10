@@ -5,4 +5,5 @@ A rougelike written in C
 
 - [x] Create player
 - [ ] Player movement
-  - [ ] Input Handling
+  - [x] Input Handling
+  - [ ] Legal movements only

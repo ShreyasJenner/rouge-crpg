@@ -1,5 +1,6 @@
 #include <ncurses.h>
 
+#include "input.h"
 #include "map.h"
 #include "player.h"
 
@@ -26,17 +27,18 @@ int main() {
 
   Player *player = create_player(11, 11, '@');
 
+  InputHandling *ih = create_InputHandling();
+
   render_level(level);
   render_player(player);
 
-  getch();
+  // NOTE: Temporary code to handle input
+  while (ih->key != 'q') {
+    ih->key = getch();
 
-  // NOTE: temporary code to handle player movement
-  update_player_coordinates(player, player->x + 1, player->y);
-  render_level(level);
-  render_player(player);
-
-  getch();
+    render_level(level);
+    move_player(player, ih);
+  }
 
   destroy_level(level);
   destroy_player(player);
