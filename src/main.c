@@ -1,6 +1,7 @@
 #include <ncurses.h>
 
 #include "map.h"
+#include "player.h"
 
 int screenSetup() {
   initscr();
@@ -23,11 +24,22 @@ int main() {
   level->paths[1] = create_path(29, 12, 9, false);
   level->paths[2] = create_path(30, 12, 9, false);
 
+  Player *player = create_player(11, 11, '@');
+
   render_level(level);
+  render_player(player);
+
+  getch();
+
+  // NOTE: temporary code to handle player movement
+  update_player_coordinates(player, player->x + 1, player->y);
+  render_level(level);
+  render_player(player);
 
   getch();
 
   destroy_level(level);
+  destroy_player(player);
 
   endwin();
 

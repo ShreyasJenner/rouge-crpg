@@ -3,5 +3,6 @@ A rougelike written in C
 
 ## To-Do:
 
-[ ] Create player
-[ ] Player movement
+- [x] Create player
+- [ ] Player movement
+  - [ ] Input Handling
