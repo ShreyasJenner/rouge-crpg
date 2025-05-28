@@ -6,4 +6,4 @@ A rougelike written in C
 - [x] Create player
 - [ ] Player movement
   - [x] Input Handling
-  - [ ] Legal movements only
+  - [x] Legal movements only

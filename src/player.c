@@ -31,25 +31,49 @@ void update_player_coordinates(Player *player, int x, int y) {
   player->y = y;
 }
 
+// Function to check if the move to be made by the player is legal
+int legal_move(int x, int y) {
+  char map_char;
+
+  map_char = mvinch(y, x);
+
+  if (map_char == '+' || map_char == '#') {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
 // Function to move player
 void move_player(Player *player, InputHandling *ih) {
 
   // player moves right
   if (ih->key == 'd') {
 
-    update_player_coordinates(player, player->x + 1, player->y);
+    if (legal_move(player->x + 1, player->y)) {
+      update_player_coordinates(player, player->x + 1, player->y);
+    }
+
   } else if (ih->key == 'a') {
 
     // player moves left
-    update_player_coordinates(player, player->x - 1, player->y);
+    if (legal_move(player->x - 1, player->y)) {
+      update_player_coordinates(player, player->x - 1, player->y);
+    }
+
   } else if (ih->key == 'w') {
 
     // player moves up
-    update_player_coordinates(player, player->x, player->y - 1);
+    if (legal_move(player->x, player->y - 1)) {
+      update_player_coordinates(player, player->x, player->y - 1);
+    }
+
   } else if (ih->key == 's') {
 
     // player moves down
-    update_player_coordinates(player, player->x, player->y + 1);
+    if (legal_move(player->x, player->y + 1)) {
+      update_player_coordinates(player, player->x, player->y + 1);
+    }
   }
 
   render_player(player);
