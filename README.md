@@ -1,6 +1,7 @@
 # rouge-crpg
 
 A rouge-like game creator written in C
+<br>
 The eventual goal is to be able to build a simple rouge like game using this project
 
 ## Screenshots
