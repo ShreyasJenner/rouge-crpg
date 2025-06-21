@@ -6,13 +6,13 @@ The eventual goal is to be able to build a simple rouge like game using this pro
 
 ## Screenshots
 
-![Sample Photo](./assets/sample.webp)
+![Sample](./assets/sample.webp)
 
 ## Setup
 
 - Run ```make``` command to compile the project
-- Run ```bin/rouge``` to run the program
 - Run ```make clean``` to remove all object and compiled files
+- Run ```bin/rouge``` to run the program
 
 ## Directory structure
 
@@ -27,7 +27,13 @@ The eventual goal is to be able to build a simple rouge like game using this pro
 - [x] Player movement
   - [x] Input Handling
   - [x] Legal movements only
-- [ ] scrollable maps (maps that are larger than the screen and necessary parts are rendered as needed)
+- [ ] scrollable maps (maps that are larger than the screen have visible parts rendered)
 - [ ] Obstacles
-- [ ] Levels
+- [ ] Puzzles
+- [ ] Levels 
+- [ ] Stats
 - [ ] Resources
+- [ ] Enemies
+- [ ] Random levels
+
+Further additions can be taken from the original [Rouge game](https://en.wikipedia.org/wiki/Rogue_(video_game)) 
