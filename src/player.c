@@ -38,8 +38,10 @@ int legal_move(int x, int y) {
   map_char = mvinch(y, x);
 
   if (map_char == '+' || map_char == '#') {
+
     return 1;
   } else {
+
     return 0;
   }
 }
@@ -51,6 +53,7 @@ void move_player(Player *player, InputHandling *ih) {
   if (ih->key == 'd') {
 
     if (legal_move(player->x + 1, player->y)) {
+
       update_player_coordinates(player, player->x + 1, player->y);
     }
 
@@ -58,6 +61,7 @@ void move_player(Player *player, InputHandling *ih) {
 
     // player moves left
     if (legal_move(player->x - 1, player->y)) {
+
       update_player_coordinates(player, player->x - 1, player->y);
     }
 
@@ -65,6 +69,7 @@ void move_player(Player *player, InputHandling *ih) {
 
     // player moves up
     if (legal_move(player->x, player->y - 1)) {
+
       update_player_coordinates(player, player->x, player->y - 1);
     }
 
@@ -72,6 +77,7 @@ void move_player(Player *player, InputHandling *ih) {
 
     // player moves down
     if (legal_move(player->x, player->y + 1)) {
+
       update_player_coordinates(player, player->x, player->y + 1);
     }
   }
