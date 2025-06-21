@@ -3,6 +3,10 @@
 A rouge-like game creator written in C
 The eventual goal is to be able to build a simple rouge like game using this project
 
+## Screenshots
+
+[Sample Photo](./assets/sample.png)
+
 ## Setup
 
 - Run ```make``` command to compile the project
