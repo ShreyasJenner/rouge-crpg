@@ -5,7 +5,7 @@ The eventual goal is to be able to build a simple rouge like game using this pro
 
 ## Screenshots
 
-[Sample Photo](./assets/sample.png)
+[Sample Photo](./assets/sample.webp)
 
 ## Setup
 
